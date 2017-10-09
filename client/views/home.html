@@ -1,0 +1,51 @@
+<div class="container">
+  <div ng-if="!isAuthenticated()">
+    <div class="jumbotron">
+      <h2><i class="ion-heart"></i> Reactions Facebook</h2></p>
+      <p>
+        <a class="btn btn-lg btn-success" href="#/login"><i class="ion-log-in"></i> Đăng nhập</a>
+        <a class="btn btn-lg btn-primary" href="#/signup"><i class="ion-person-add"></i> Đăng ký</a>
+      </p>
+    </div>
+  </div>
+  <div ng-if="isAuthenticated()">
+      <h2><i class="ion-heart"></i> Reactions Facebook</h2></p>
+      <p>
+        <a class="btn btn-lg btn-success" href="#/accounts"><i class="ion-lists"></i> Danh sách tài khoản</a>
+        <a class="btn btn-lg btn-primary" href="#/accounts/add"><i class="ion-person-add"></i> Thêm tài khoản</a>
+      </p>
+        <table class="table" ng-controller="HomeCtrl">
+          <thead>
+            <th class="text-center">Họ tên</th>
+            <th class="text-center" class="text-center">ID Facebook</th>
+            <th class="text-center">Trạng thái</th>
+            <th class="text-center">Hành động</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="account in accounts">
+              <td class="text-center"><a href="#/account/{{account._id}}">{{account.name}}</a></td>
+              <td class="text-center">{{account.idfb}}</td>
+              <td class="text-center">{{(account.status == 1) ? 'Live' : 'Die'}}</td>
+              <td class="text-center">
+                <button class="red" ng-click='removeAccount(account._id)'><i class="ion-android-trash"></i> Del</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>

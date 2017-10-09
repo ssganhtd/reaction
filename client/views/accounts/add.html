@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="jumbotron">
+		<h2><i class="ion-plus"></i> Thêm tài khoản Facebook</h2></p>
+		<form name="addForm" ng-submit="addacount()" novalidate>
+			<div class="form-group">
+				<input type="text" class="form-control" name="access_token" placeholder="Nhập Access Token" ng-model="access_token" required="" minlength="20" ng-value="access_token">
+			</div>
+			<div class="form-group">
+				<select name="reaction" id="reaction" class="form-control" ng-model="reaction">
+					<option value="LOVE" ng-selected="selected">LOVE</option>
+					<option value="LIKE">LIKE</option>
+					<option value="WOW">WOW</option>
+					<option value="HAHA">HAHA</option>
+					<option value="SAD">SAD</option>
+					<option value="ANGRY">ANGRY</option>
+					<option value="THANKFUL">THANKFUL</option>
+				</select>
+			</div>
+			<button class="btn btn-success" ng-disabled="addForm.$invalid">Thêm</button>
+		</form>
+	</div>
+</div>

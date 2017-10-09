@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="Reactions">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hệ thống Reactions Facebook</title>
+  <link rel="stylesheet" href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+  <!--<link rel="stylesheet" href="css/bootstrap.css">-->
+  <!--<link rel="stylesheet" href="css/sweet-alert.css">-->
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+<div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <a href="/" class="navbar-brand"><i class="ion-heart"></i> Reactions Facebook</a>
+      <li><a href="#/">Trang chủ</a></li>
+      <li ng-if="!isAuthenticated()"><a href="#/login">Đăng nhập</a></li>
+      <li ng-if="!isAuthenticated()"><a href="#/signup">Đăng ký</a></li>
+      <li ng-if="isAuthenticated()"><a ng-click="logout()" href="">Thoát</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-if="isAuthenticated()">
+        @{{currentUser.username}}
+      </li>
+    </ul>
+  </div>
+</div>
+<div ng-view></div>
+<footer class="container-fluid text-center bg-lightgray">
+        <div class="copyrights" style="margin-top:25px;">
+            <p>©2017, All Rights Reserved
+                <span>Web Design By: Dịch Vụ Like</span></p>
+        </div>
+</footer>
+
+<script src="vendor/angular.js"></script>
+<script src="vendor/angular-route.js"></script>
+<script src="vendor/angular-messages.js"></script>
+<script src="vendor/sweet-alert.js"></script>
+<script src="vendor/satellizer.js"></script>
+
+<script src="app.js"></script>
+<script src="services/api.js"></script>
+<script src="directives/serverError.js"></script>
+<script src="controllers/home.js"></script>
+<script src="controllers/navbar.js"></script>
+<script src="controllers/login.js"></script>
+<script src="controllers/signup.js"></script>
+<script src="controllers/accounts/add.js"></script>
+</body>
+</html>

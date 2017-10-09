@@ -1,0 +1,29 @@
+{
+  "name": "reaction",
+  "version": "1.0.0",
+  "description": "Reaction Facebook",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "consolidate": "^0.14.5",
+    "cors": "*",
+    "ejs": "^2.5.7",
+    "express": "*",
+    "gulp": "^3.9.1",
+    "jsonwebtoken": "*",
+    "mongoose": "^4.10.8",
+    "mustache": "^2.3.0",
+    "node-cron": "^1.2.1",
+    "passport": "*",
+    "passport-jwt": "*",
+    "request": "^2.81.0",
+    "socket.io": "^2.0.3"
+  },
+  "author": "AnhTD",
+  "license": "ISC"
+}
